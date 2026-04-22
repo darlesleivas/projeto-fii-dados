@@ -1,0 +1,9 @@
+__pycache__/
+.ipynb_checkpoints/
+
+# Raw data extracted locally from the downloaded ZIP
+data/dataset_zip/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db

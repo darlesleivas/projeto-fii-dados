@@ -1,19 +1,19 @@
-# Insights do Case
+# Insights do Projeto
 
-Este projeto foi desenhado para apresentar um fluxo simples e convincente de engenharia de dados aplicado ao mercado de FIIs.
+Este documento resume o recorte analitico, os principais outputs gerados e as conclusoes observadas a partir do pipeline de dados de FIIs.
 
 ## Recorte escolhido
 
-Em vez de usar todas as tabelas do dataset, o case prioriza 4 fontes com melhor potencial analitico:
+Em vez de usar todas as tabelas do dataset, o projeto prioriza 4 fontes com maior potencial analitico:
 
 - cadastro dos fundos
 - relacao fundo x ticker
 - informes mensais
 - cotacoes historicas
 
-Esse recorte permite responder perguntas de negocio e, ao mesmo tempo, manter o repositorio leve e facil de explicar em entrevistas.
+Esse recorte permite responder perguntas de negocio relevantes sem aumentar desnecessariamente a complexidade do pipeline.
 
-## O que analisar nos outputs
+## Outputs principais
 
 - `fii_snapshot_latest.csv`: ultimo retrato disponivel de cada fundo
 - `top_fundos_por_cotistas.csv`: ranking dos fundos com maior base de investidores
@@ -28,9 +28,9 @@ Esse recorte permite responder perguntas de negocio e, ao mesmo tempo, manter o 
 
 ![Historico dos tickers mais liquidos](./charts/top5_fechamento_mensal.png)
 
-## Narrativa para apresentacao
+## Principais conclusoes
 
-1. O dataset bruto foi reduzido para um escopo analitico claro.
-2. Os dados foram padronizados e limpos para evitar outliers absurdos em metricas mensais.
-3. A camada gold consolida informacoes suficientes para ranking, acompanhamento de mercado e comparacao entre tickers.
-4. O projeto foi estruturado para ser reproduzivel, facil de versionar e pronto para evoluir para ferramentas maiores.
+1. O recorte adotado cobre cadastro, negociacao e historico de cotacoes, o que permite combinar visao cadastral com comportamento de mercado.
+2. A padronizacao previa das tabelas reduz inconsistencias antes da consolidacao final e melhora a confiabilidade das metricas mensais.
+3. A camada `gold` concentra saidas voltadas para consulta e comparacao, com arquivos especificos para snapshot, ranking e evolucao temporal.
+4. A estrutura do projeto favorece reproducibilidade e extensao futura, mantendo separacao clara entre fonte, processamento e artefatos analiticos.
